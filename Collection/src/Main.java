@@ -1,39 +1,29 @@
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedList;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<String> pessoas = new ArrayList();
-        //LinkedList<String> pessoas = new LinkedList();
+        ArrayList<Integer> lista = new ArrayList(); // Integer representa os numeros inteiros
+        HashSet <Integer> conjunto = new HashSet<>();
+        HashMap <String, Integer> mapa = new HashMap<>();
 
+        int soma;
+        soma = 0;
+        for (int i=0; i < lista.size(); i++){
+            soma += lista.get(i);
+        }
 
-        pessoas.add("Mário");
-        pessoas.add("Luigi");
-        pessoas.add("Peach");
-        pessoas.add("Yoshi");
+        soma = 0;
+        for (int item : lista) {
+            soma += item;
+        }
 
-        System.out.println(pessoas.get(0));
-        //pessoas.remove(1);
+        soma = 0;
+        //Iterator it = mapa.entrySet().iterator();
+        //Iterator it = conjunto.iterator();
+        Iterator it = lista.iterator();
 
-        System.out.println("ordem origial");
-        System.out.println(pessoas);
-
-        Collections.sort(pessoas);
-        System.out.println("ordem alfabética");
-        System.out.println(pessoas);
-
-        Collections.shuffle(pessoas);
-        System.out.println("após shuffle");
-        System.out.println(pessoas);
-
-        Collections.reverse(pessoas);
-        System.out.println("após reversa");
-        System.out.println(pessoas);
-
-        System.out.println(Collections.min(pessoas));
-        System.out.println(Collections.max(pessoas));
-
+        while(it.hasNext()) {
+            soma += (int)it.next();
+        }
     }
 }
